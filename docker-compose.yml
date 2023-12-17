@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  shopping-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vuejs-app/shopping-app
+    container_name: shopping-app-1
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/usr/src/app
+
+networks:
+  app-network:
+    driver: bridge
